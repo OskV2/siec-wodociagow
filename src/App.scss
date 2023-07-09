@@ -1,0 +1,13 @@
+@import 'index';
+
+.app {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: $bg-color;
+
+    color: $white;
+    font-family: sans-serif;
+
+    display: flex;
+    flex-direction: column;
+}
