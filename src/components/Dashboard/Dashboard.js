@@ -10,7 +10,7 @@ const Dashboard = () => {
     <div className="container">
         <div className="row">
           <Card className="col-12 col-lg-6">
-            <WaterworksGraph />
+            <WaterworksGraph multiplier="1" />
           </Card>
           <Card className="col-12 col-lg-6">
             <WaterworksChart />
