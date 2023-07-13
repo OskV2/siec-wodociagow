@@ -135,14 +135,12 @@ const WaterworksGraph = (props) => {
 
   // click on node to open modal
   const onClickNode = (nodeId) => {
-    console.log(`Clicked node ${nodeId}`);
     setClickedNodeId(nodeId);
     setModalIsShown(true);
   };
 
   // click on background or on button to close modal
   const onCloseNode = (nodeId) => {
-    console.log(`Closed node modal ${nodeId}`);
     setClickedNodeId(null);
     setModalIsShown(false);
   };
