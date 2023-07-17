@@ -116,15 +116,18 @@ const WaterworksChart = () => {
   };
   return (
     <>
-      <Switch
-        isOn={chartType}
-        handleToggle={() => setChartType(!chartType)}
-        imgOneWhite={BarWhite}
-        imgOneBlack={BarBlack}
-        imgTwoWhite={PieWhite}
-        imgTwoBlack={PieBlack}
-      />
-      <div className='chart'>
+      <div className="d-flex justify-content-between mb-4">
+        <h2 className="chart__title">Wykres</h2>
+        <Switch
+          isOn={chartType}
+          handleToggle={() => setChartType(!chartType)}
+          imgOneWhite={BarWhite}
+          imgOneBlack={BarBlack}
+          imgTwoWhite={PieWhite}
+          imgTwoBlack={PieBlack}
+        />
+      </div>
+      <div className="chart">
         {chartType && <Bar data={chartData} options={chartOptions} className="chart" />}
         {!chartType && <Pie data={chartData} options={chartOptions} className="chart" />}
       </div>

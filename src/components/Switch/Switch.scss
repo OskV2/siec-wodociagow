@@ -12,8 +12,8 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        width: 100px;
-        height: 50px;
+        width: 80px;
+        height: 40px;
         background: $white;
         border-radius: 100px;
         position: relative;
@@ -21,8 +21,8 @@
         position: relative;
 
         &__img {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             position: absolute;
             margin: auto unset;
 
@@ -39,8 +39,8 @@
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
         border-radius: 45px;
         transition: 0.2s;
         background: $gray-800;
@@ -50,8 +50,8 @@
         align-items: center;
 
         &__img {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
         }
     }
     
