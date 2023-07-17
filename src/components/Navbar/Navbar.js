@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from 'react-router-dom'
 import './Navbar.scss'
 
-import Close from "../../img/close.svg";
+import Close from "../../img/close-white.svg";
 import Burger from "../../img/burger.svg";
 
 const Navbar = () => {
