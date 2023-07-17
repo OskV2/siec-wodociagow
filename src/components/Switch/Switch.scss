@@ -20,6 +20,10 @@
         transition: background-color .2s;
         position: relative;
 
+        @media(max-width: 991px) {
+            margin: 0 auto;
+        }
+
         &__img {
             width: 25px;
             height: 25px;
