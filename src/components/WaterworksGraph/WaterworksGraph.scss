@@ -1,5 +1,16 @@
 @import '../../index';
 
+.graph {
+    &__title {
+        color: $white;
+        margin: 0;
+
+        @media(max-width: 991px) {
+            text-align: center;
+        }
+    }
+}
+
 .modal__content {
     display: flex;
     flex-direction: column;

@@ -26,6 +26,7 @@
             width: 40px;
             height: 40px;
             margin-right: 15px;
+            cursor: pointer;
         }
 
         &__input {
@@ -94,6 +95,19 @@
 
         &--error {
             color: red;
+        }
+    }
+
+    &__number {
+        color: $white;
+        margin: 15px 0 0 0 ;
+
+        &--ok {
+            color: #6dff6d;
+        }
+
+        &--error {
+            color: #ff4c4c;
         }
     }
 }

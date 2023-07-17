@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MaterialReactTable } from "material-react-table";
-import { MRT_Localization_PL } from 'material-react-table/locales/pl'; //Import Material React Table Translations
+import { MRT_Localization_PL } from "material-react-table/locales/pl"; //Import Material React Table Translations
 
 import "./WaterworksTable.scss";
 
@@ -54,7 +54,7 @@ const WaterworksTable = () => {
   //function for showing and closing search input
   const openAndCloseSearch = () => {
     setShowSearch(!showSearch);
-  }
+  };
 
   //data for table
   const data = [
@@ -114,6 +114,37 @@ const WaterworksTable = () => {
     },
   ];
 
+  const numberOfDevices = data.length;
+
+  const getOkDevices = () => {
+    const okDevices = data.filter((item) => {
+      const stateString = item.state.props.children[1];
+      const state = stateString.props.children.toLowerCase();
+      return state === "ok";
+    });
+    return okDevices.length;
+  };
+  const numberOfOkDevices = (
+    <span className="table__number table__number--ok">{getOkDevices()}</span>
+  );
+
+  const getErrorDevices = () => {
+    const errorDevices = data.filter((item) => {
+      const stateString = item.state.props.children[1];
+      const state = stateString.props.children.toLowerCase();
+      return state === "error";
+    });
+    return errorDevices.length;
+  };
+  const numberOfErrorDevices = (
+    <span className="table__number table__number--error">
+      {getErrorDevices()}
+    </span>
+  );
+
+  console.log(numberOfErrorDevices);
+  console.log(numberOfOkDevices);
+
   //filtering data with input
   const filteredData = data.filter((item) => {
     //get state from span item, because item.state is object of image and span
@@ -141,7 +172,12 @@ const WaterworksTable = () => {
             onClick={openAndCloseSearch}
           />
           <input
-            className={'table__search__input ' + (showSearch ? ' table__search__input--active ' : 'table__search__input--inactive ')}
+            className={
+              "table__search__input " +
+              (showSearch
+                ? " table__search__input--active "
+                : "table__search__input--inactive ")
+            }
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
@@ -149,7 +185,7 @@ const WaterworksTable = () => {
         </div>
       </div>
       <MaterialReactTable
-        enableColumnActions={false}  //disable unnecessary actions in table
+        enableColumnActions={false} //disable unnecessary actions in table
         enableColumnFilters={false}
         enablePagination={false}
         enableBottomToolbar={false}
@@ -158,6 +194,10 @@ const WaterworksTable = () => {
         data={filteredData}
         localization={MRT_Localization_PL} // added translation so "No records to display" is in polish
       />
+      <span className="table__number">
+        Liczba urządzeń: {numberOfDevices + " "}
+        (Aktywne: {numberOfOkDevices}, Nieaktywne: {numberOfErrorDevices})
+      </span>
     </>
   );
 };

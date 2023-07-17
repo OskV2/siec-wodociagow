@@ -116,17 +116,20 @@ const WaterworksChart = () => {
   };
   return (
     <>
-      <Switch
-        isOn={chartType}
-        handleToggle={() => setChartType(!chartType)}
-        imgOneWhite={BarWhite}
-        imgOneBlack={BarBlack}
-        imgTwoWhite={PieWhite}
-        imgTwoBlack={PieBlack}
-      />
-      <div className='chart'>
-        {chartType && <Bar data={chartData} options={chartOptions} className="chart" />}
-        {!chartType && <Pie data={chartData} options={chartOptions} className="chart" />}
+      <div className="d-flex justify-content-center justify-content-lg-between flex-column flex-lg-row mb-4">
+        <h2 className="chart__title">Wykres</h2>
+        <Switch
+          isOn={chartType}
+          handleToggle={() => setChartType(!chartType)}
+          imgOneWhite={BarWhite}
+          imgOneBlack={BarBlack}
+          imgTwoWhite={PieWhite}
+          imgTwoBlack={PieBlack}
+        />
+      </div>
+      <div className="chart__chart">
+        {chartType && <Bar data={chartData} options={chartOptions} className="chart__chart" />}
+        {!chartType && <Pie data={chartData} options={chartOptions} className="chart__chart" />}
       </div>
     </>
   );
