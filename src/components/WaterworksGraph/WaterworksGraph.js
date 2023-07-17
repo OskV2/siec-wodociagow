@@ -182,6 +182,7 @@ const WaterworksGraph = (props) => {
 
   return (
     <>
+      <h2 className="graph__title">Struktura urządzeń</h2>
       {modalIsShown && modalContent}
       <Graph
         id="graph-id"
