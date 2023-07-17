@@ -1,0 +1,53 @@
+@import '../../index';
+
+.graph {
+    &__title {
+        color: $white;
+        margin: 0;
+
+        @media(max-width: 991px) {
+            text-align: center;
+        }
+    }
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+
+    &__type {
+        padding: 5px 10px;
+        background-color: $gray-800;
+        border-radius: 5px;
+        width: fit-content;
+        margin-bottom: 10px;
+        color: $white;
+    }
+
+    &__state {
+        margin: 0;
+
+        &__img {
+            width: 20px;
+            height: 20px;
+            margin: 0px 10px;
+        }
+
+        &--ok {
+            color: green;
+        }
+
+        &--error {
+            color: red;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
