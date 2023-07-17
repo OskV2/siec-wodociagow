@@ -6,6 +6,31 @@
     align-items: center;
     padding: 30px 0;
 
+    @media(max-width: 991px) {
+        position: relative;
+    }
+
+    &__items {
+        @media(max-width: 991px) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-height: 0;
+            width: 100%;
+    
+            &--active {
+                max-height: 500px;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+            }
+    
+            &--inactive {
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+            }
+        }
+    }
+
     &__item {
         color: #888;
         text-decoration: none;
@@ -19,5 +44,21 @@
         &:hover {
             color: white
         }
+
+        @media(max-width: 991px) {
+            width: 100%;
+            margin: 20px 0 0 0;
+            padding-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid $gray-800;
+        }
+    }
+
+    &__button {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 30px;
+        right: 0;
     }
 }
