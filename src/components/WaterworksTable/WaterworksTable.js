@@ -114,6 +114,27 @@ const WaterworksTable = () => {
     },
   ];
 
+
+  const numberOfDevices = data.length;
+
+  const getOkDevices = () => {
+    const okDevices = data.filter((item) => {
+      const stateString = item.state.props.children[1];
+      const state = stateString.props.children.toLowerCase();
+      return state === "ok";
+    });
+    return okDevices.length;
+  }
+
+  const getErrorDevices = () => {
+    const errorDevices = data.filter((item) => {
+      const stateString = item.state.props.children[1];
+      const state = stateString.props.children.toLowerCase();
+      return state === "error";
+    });
+    return errorDevices.length;
+  }
+
   //filtering data with input
   const filteredData = data.filter((item) => {
     //get state from span item, because item.state is object of image and span
@@ -158,6 +179,9 @@ const WaterworksTable = () => {
         data={filteredData}
         localization={MRT_Localization_PL} // added translation so "No records to display" is in polish
       />
+      <span className="table__number">{'Liczba urządzeń: ' + numberOfDevices}</span>
+      <span className="table__number table__number--ok">{'Aktywne urządzenia: ' + getOkDevices()}</span>
+      <span className="table__number table__number--error">{'Niekatywne urządzenia: ' + getErrorDevices()}</span>
     </>
   );
 };

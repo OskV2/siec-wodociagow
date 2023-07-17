@@ -97,6 +97,21 @@
             color: red;
         }
     }
+
+    &__number {
+        color: $white;
+        margin: 15px 0 0 0 ;
+        display: block;
+        width: 100%;
+
+        &--ok {
+            color: #6dff6d;
+        }
+
+        &--error {
+            color: #ff4c4c;
+        }
+    }
 }
 
 .MuiPaper-root, 
